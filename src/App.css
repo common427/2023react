@@ -15,13 +15,21 @@ li{list-style: none;}
   position: fixed;
   left: 50%;
   top: 50%;
+
+  /* margin-left: -150px;
+  margin-top: -150px; */
   transform: translate(-50%, -50%);
+
   background: #fff;
   padding: 20px;
   border-radius: 10px;
   width: 300px;
   height: 300px;
   box-shadow: 0 0 10px rgba(0,0,0,0.5);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; 
 }
 
 
@@ -48,3 +56,46 @@ li{list-style: none;}
 
   background-color: skyblue;
 }
+
+.tab>ul{
+  display: flex;
+}
+
+.tab>ul>li{
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 5px 5px 0 0;
+  border: 1px solid #000;
+  border-right: 0 none;
+}
+
+.tab>ul>li:last-child{
+  border-right: 1px solid #000;
+}
+
+.tab>ul>li.active{
+  background: skyblue;
+  border-bottom: none;
+}
+
+.lists>li{
+  padding: 10px 0;
+  cursor: pointer;
+} 
+
+.lists>li:hover{
+  background: skyblue;
+  transform: scale(1.005,1.005);
+}
+
+.btnWrap{
+  display: flex;
+  justify-content: end;
+}
+
+.btnWrap button{
+    padding: 5px 15px;
+}
+
+
+
