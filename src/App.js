@@ -17,6 +17,10 @@ function App() {
     setVModal(true)
   }
 
+  const listIndexAndModalView = function(i){
+    setNum(i);
+    setVModal(true);
+  }
   const handleClose = ()=>{
     setVModal(false)
   }
@@ -29,17 +33,21 @@ function App() {
           data.map(function(item, i){
             return (
               <>
-              <li onClick={()=>{openList(i)}}> {item} </li>
+              <li onClick={()=>{listIndexAndModalView(i)}}> {item} </li>
               </>
             )
             
           })
         }
       </ul>
-        <button onClick={()=>setVModal(!vModal)}>보기/안보기</button>
+        {/* <button onClick={()=>setVModal(!vModal)}>보기/안보기</button> */}
+        <button onClick={function(){
+          setVModal(!vModal)
+        }}> 보기/안보기</button>
 
         {
-          vModal ===true? <Modal rData={data}  rNum={num} onClose={handleClose}/> : null
+          // vModal === true? <Modal rData={data}  rNum={num} onClose={handleClose}/> : null
+          vModal === true? <Modal rData={data} rNum={num} onClose={handleClose} />: null
         }
 
       {/* <Modal/> */}
@@ -48,20 +56,7 @@ function App() {
   );
 }
 
-// function Modal(props){
-//   return (
-//     <>
-//       <div className="modal">
-//         <h3>안녕하세요</h3>
-//         <p>{props.rData[props.rNum]}</p>
-//         <div className='btnWrap'>
-//         <button>닫기</button>  
-//         </div>
-        
-//       </div>
-//     </>
-//   )
-// }
+
 
 function Modal({rData, rNum, onClose}){
   return (
@@ -82,5 +77,27 @@ function Modal({rData, rNum, onClose}){
     </>
   )
 }
+
+
+
+// function Modal(props){
+//   return (
+//     <>
+//       <div className="modal">
+
+//         <div className='modalBody'>
+//           <h3>안녕하세요</h3>
+//           <p>{props.rData[props.rNum]}</p>
+//         </div>
+
+//         <div className='btnWrap'>
+//           <button onClick={props.onClose}>닫기</button>  
+//         </div>
+        
+  
+//       </div>
+//     </>
+//   )
+// }
 
 export default App;

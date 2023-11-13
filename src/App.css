@@ -85,7 +85,8 @@ li{list-style: none;}
 
 .lists>li:hover{
   background: skyblue;
-  transform: scale(1.005,1.005);
+  /* transform: scale(1.005,1.005); */
+  font-weight: 600;
 }
 
 .btnWrap{
